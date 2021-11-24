@@ -17,6 +17,7 @@
     <link href="{{ asset('plugins/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-fixedcolumns-bs4/css/fixedColumns.bootstrap4.min.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('plugins/jquery-ui-dist/jquery-ui.min.css')}}" />
+    <link href="{{ asset('plugins/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}" rel="stylesheet" />
 
 
     @show
@@ -32,13 +33,36 @@
 <script src="{{ asset('plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
 <script src="{{ asset('plugins/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
 <script src="{{ asset('plugins/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{ asset('plugins/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables.net-buttons/js/buttons.colVis.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables.net-buttons/js/buttons.flash.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
+<script src="{{ asset('plugins/pdfmake/build/pdfmake.min.js') }}"></script>
+<script src="{{ asset('plugins/pdfmake/build/vfs_fonts.js') }}"></script>
+<script src="{{ asset('plugins/jszip/dist/jszip.min.js') }}"></script>
 <script src="{{ asset('plugins/jquery.maskedinput/src/jquery.maskedinput.js') }}"></script>
 
 
 
 <script type="text/javascript">
     $('#data-table-default').DataTable({
-        responsive: true
+        responsive: true,
+        dom: '<"row"<"col-sm-5"B><"col-sm-7"fr>>t<"row"<"col-sm-5"i><"col-sm-7"p>>',
+        buttons: [{
+            extend: 'pdf',
+            title: 'productos escasos',
+            className: 'btn-sm',
+            exportOptions: {
+                columns: [0, 1, 2, 5, 6, 7, 8, 9],
+                rows: function(idx, data, node) {
+                    if (data[7] < 200) {
+                        return data;
+                    }
+                }
+            }
+        }],
     });
 </script>
 
@@ -114,7 +138,7 @@
 
     <div id="div">
 
-        <h1>Captura de Proveedores</h1>
+        <h1>Captura de Productos</h1>
         <form id="from1">
 
             @csrf
@@ -149,10 +173,10 @@
 
 
 
-        <h1>Tabla de usuarios actuales</h1>
+        <h1>Tabla de productos actuales</h1>
 
 
-        <table id="data-table-default" class="table table-striped table-bordered align-middle">
+        <table id="data-table-default" class="table  table-bordered align-middle">
             <thead>
                 <tr>
                     <th width="1%">id</th>
@@ -172,19 +196,19 @@
 
 
                 @foreach($productos as $item)
-                <tr class="fradeX odd">
-
-                    <td style="display: none;">{{$item->SKU}}</td>
-                    <td style="display: none;">{{$item->Nombre_del_producto}}</td>
-                    <td style="display: none;">{{$item->Descripcion_del_producto}}</td>
-                    <td style="display: none;">{{$item->Clave_del_sat}}</td>
-                    <td style="display: none;">{{$item->Clave_de_unidad}}</td>
-                    <td style="display: none;">{{$item->Tipo}}</td>
-                    <td style="display: none;">{{$item->Precio_unitario}}</td>
-                    <td style="display: none;">{{$item->Existencias_actuales}}</td>
-                    <td style="display: none;">{{$item->Punto_de_reabastecimiento}}</td>
-                    <td style="display: none;">{{$item->Cuenta_de_activo_de_inventario}}</td>
-                    <td style="display: none;">
+                @if($item->Existencias_actuales
+                <= 100) <tr class="fradeX odd">
+                    <td style="display: none; background-color:yellow">{{$item->SKU}}</td>
+                    <td style="display: none; background-color:yellow">{{$item->Nombre_del_producto}}</td>
+                    <td style="display: none; background-color:yellow">{{$item->Descripcion_del_producto}}</td>
+                    <td style="display: none; background-color:yellow">{{$item->Clave_del_sat}}</td>
+                    <td style="display: none; background-color:yellow">{{$item->Clave_de_unidad}}</td>
+                    <td style="display: none; background-color:yellow">{{$item->Tipo}}</td>
+                    <td style="display: none; background-color:yellow">{{$item->Precio_unitario}}</td>
+                    <td style="display: none; background-color:yellow">{{$item->Existencias_actuales}}</td>
+                    <td style="display: none; background-color:yellow">{{$item->Punto_de_reabastecimiento}}</td>
+                    <td style="display: none; background-color:yellow">{{$item->Cuenta_de_activo_de_inventario}}</td>
+                    <td style="display: none; background-color:yellow">
 
 
 
@@ -193,8 +217,32 @@
 
                     </td>
 
-                </tr>
-                @endforeach
+                    </tr>
+                    @else
+                    <tr class="fradeX odd">
+                        <td style="display: none;">{{$item->SKU}}</td>
+                        <td style="display: none;">{{$item->Nombre_del_producto}}</td>
+                        <td style="display: none;">{{$item->Descripcion_del_producto}}</td>
+                        <td style="display: none;">{{$item->Clave_del_sat}}</td>
+                        <td style="display: none;">{{$item->Clave_de_unidad}}</td>
+                        <td style="display: none;">{{$item->Tipo}}</td>
+                        <td style="display: none;">{{$item->Precio_unitario}}</td>
+                        <td style="display: none;">{{$item->Existencias_actuales}}</td>
+                        <td style="display: none;">{{$item->Punto_de_reabastecimiento}}</td>
+                        <td style="display: none;">{{$item->Cuenta_de_activo_de_inventario}}</td>
+                        <td style="display: none;">
+
+
+
+                            <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->SKU}}">edit</button>
+                            <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->SKU}}">delete</button>
+
+                        </td>
+
+                    </tr>
+
+                    @endif
+                    @endforeach
         </table>
 
     </div>

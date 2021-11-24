@@ -123,7 +123,7 @@
 
     <div id="div">
 
-        <h1>Captura de Proveedores</h1>
+        <h1>Captura de Clientes</h1>
         <form id="from1">
 
             @csrf
@@ -170,7 +170,7 @@
 
 
 
-        <h1>Tabla de usuarios actuales</h1>
+        <h1>Tabla de Clientes actuales</h1>
 
 
         <table id="data-table-default" class="table table-striped table-bordered align-middle">

@@ -113,7 +113,7 @@
     @if(Session::has('users.Usuario'))
     <div id="div">
         <div class="mb-3">
-            <h1>Captura de usuarios</h1>
+            <h1>Modificacion de proveedores</h1>
 
             <form data-parsley-validate="true" id="from1">
 

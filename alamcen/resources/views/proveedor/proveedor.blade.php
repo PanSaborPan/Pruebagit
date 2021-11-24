@@ -158,7 +158,7 @@
 
 
 
-        <h1>Tabla de usuarios actuales</h1>
+        <h1>Tabla de proveedores actuales</h1>
 
 
         <table id="data-table-default" class="table table-striped table-bordered align-middle">

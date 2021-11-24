@@ -74,7 +74,7 @@
                 type: "PUT",
                 data: {
                     "_token": "{{ csrf_token() }}",
-                    
+
                     Cliente: Cliente,
                     Producto: Producto,
                     Descripcion: Descripcion,
@@ -106,7 +106,7 @@
 <body>
     <div id="div">
         <div class="mb-3">
-            <h1>Captura de ventas</h1>
+            <h1>Modificacion de ventas</h1>
 
             <form data-parsley-validate="true" id="from1">
 
