@@ -29,6 +29,22 @@
     function usuarios() {
         $("#contenido").load("{{ url('/Usuarios') }}");
     };
+
+    function proveedor() {
+        $("#contenido").load("{{ url('/Proveedor') }}");
+    };
+
+    function clientes() {
+        $("#contenido").load("{{ url('/Clientes') }}");
+    };
+
+    function ventas() {
+        $("#contenido").load("{{ url('/Ventas') }}");
+    };
+
+    function productos() {
+        $("#contenido").load("{{ url('/Productos') }}");
+    };
 </script>
 
 
@@ -39,6 +55,7 @@
 <body>
 
 
+    @if(Session::has('users.Usuario'))
 
     <!-- loader(cuando carga la pagina) -->
 
@@ -84,13 +101,13 @@
                         <div class="dropdown-menu" style>
                             <a onclick="usuarios()" class="dropdown-item">Usuarios</a>
                             <div class="dropdown-divider"></div>
-                            <a id="Clasificaciones" class="dropdown-item">Clasificaciones</a>
+                            <a onclick="proveedor()" class="dropdown-item">Proveedores</a>
                             <div class="dropdown-divider"></div>
-                            <a id="Projects" class="dropdown-item">Projects</a>
+                            <a onclick="clientes()" class="dropdown-item">Clientes</a>
                             <div class="dropdown-divider"></div>
-                            <a id="Lenguajes" class="dropdown-item">Lenguajes</a>
+                            <a onclick="ventas()" class="dropdown-item">Ventas</a>
                             <div class="dropdown-divider"></div>
-                            <a id="Fases" class="dropdown-item">Fases</a>
+                            <a onclick="productos()" class="dropdown-item">Productos</a>
 
                         </div>
                     </div>
@@ -128,7 +145,7 @@
                     <a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
                         <img src="" alt="" />
                         <span>
-                            <span class="d-none d-md-inline"></span>
+                            <span class="d-none d-md-inline">{{Session::get('users.Usuario')}}</span>
                             <b class="caret"></b>
                         </span>
                     </a>
@@ -137,7 +154,7 @@
                         <a href="javascript:;" class="dropdown-item">Editar Perfil</a>
                         <div class="dropdown-divider"></div>
                         -->
-                        <a href="" class="dropdown-item">Log Out</a>
+                        <a href="{{ route('home') }}" class="dropdown-item">Log Out</a>
                     </div>
                 </div>
 
@@ -169,4 +186,10 @@
             </div>
         </footer>
     </div>
+    @else
+    <script>
+        window.location = "{{ route('home') }}";
+        alert('no has iniciado session');
+    </script>
+    @endif
 </body>

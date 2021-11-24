@@ -45,7 +45,7 @@
     <script>
         function volver() {
 
-            $("#div").load("{{ url('/Usuarios') }}");
+            $("#div").load("{{ url('/Proveedor') }}");
 
         }
     </script>
@@ -57,16 +57,21 @@
         $('#from1').on('submit', function(e) {
             e.preventDefault();
 
+            let id = $('#id').val();
             let Nombre = $('#nombre').val();
-            let Area = $('#area').val();
-            let Usuario = $('#usuario').val();
-            let Contraseña = $('#password').val();
-            let Id_usuario = $('#id').val();
+            let Compañia = $('#compañia').val();
+            let Correo = $('#correo').val();
+            let Telefono = $('#telefono').val();
+            let Celular = $('#celular').val();
+            let Calle = $('#calle').val();
+            let Numero = $('#numero').val();
+            let Ciudad = $('#ciudad').val();
+            let Estado = $('#estado').val();
+            let Pais = $('#pais').val();
+            let Codigo_postal = $('#codigo_postal').val();
 
-            console.log(Id_usuario.value);
-
-            var url = '{{ route("users.update", ":id") }}';
-            url = url.replace(':id', Id_usuario.value);
+            var url = '{{ route("proveedor.update", ":id") }}';
+            url = url.replace(':id', id.value);
 
 
             $.ajax({
@@ -74,16 +79,23 @@
                 type: "PUT",
                 data: {
                     "_token": "{{ csrf_token() }}",
+                    id: id,
                     Nombre: Nombre,
-                    Area: Area,
-                    Usuario: Usuario,
-                    Contraseña: Contraseña,
-                    Id_usuario: Id_usuario,
+                    Compañia: Compañia,
+                    Correo: Correo,
+                    Telefono: Telefono,
+                    Celular: Celular,
+                    Calle: Calle,
+                    Numero: Numero,
+                    Ciudad: Ciudad,
+                    Estado: Estado,
+                    Pais: Pais,
+                    Codigo_postal: Codigo_postal,
                 },
                 success: function(response) {
                     console.log(response);
                     alert('Usuario se modifico correctamente');
-                    $("#div").load("{{ url('/Usuarios') }}");
+                    $("#div").load("{{ url('/Proveedor') }}");
                 },
                 error: function(response) {
 
@@ -98,6 +110,7 @@
 </head>
 
 <body>
+    @if(Session::has('users.Usuario'))
     <div id="div">
         <div class="mb-3">
             <h1>Captura de usuarios</h1>
@@ -105,17 +118,34 @@
             <form data-parsley-validate="true" id="from1">
 
 
-                @foreach($Usuarios as $item)
-                <input type="hidden" value="{{$item->Id_usuario}}" id="id" />
+                @foreach($proveedor as $item)
+                <input type="hidden" value="{{$item->Id_proveedor}}" id="id" />
                 <label class="form-label">Nombre</label>
                 <input class="form-control" id="nombre" type="text" placeholder="Nombre" value="{{$item->Nombre}}" />
-                <label class="form-label">Area</label>
-                <input class="form-control" id="area" type="text" placeholder="Area" value="{{$item->Area}}" />
-                <label class="form-label">Usuario</label>
-                <input type="text" id="usuario" class="form-control mb-5px" placeholder="Usuario" value="{{$item->Usuario}}" />
-                <label class="form-label">Contraseña</label>
-                <input type="password" id="password" class="form-control" placeholder="Contraseña" value="{{$item->Contraseña}}" />
+                <label class="form-label">Compañia</label>
+                <input class="form-control" id="compañia" type="text" placeholder="Compañia" value="{{$item->Compañia}}" />
+                <label class="form-label">Correo</label>
+                <input type="text" id="correo" class="form-control mb-5px" placeholder="Correo" value="{{$item->Correo}}" />
+                <label class="form-label">Telefono</label>
+                <input type="text" id="telefono" class="form-control" placeholder="Telefono" value="{{$item->Telefono}}" />
                 <br>
+                <label aling="center" class="form-label">DIRECCION:</label><br>
+                <label class="form-label">Celular</label>
+                <input type="text" id="celular" class="form-control" placeholder="Celular" value="{{$item->Celular}}" />
+                <label class="form-label">Calle</label>
+                <input type="text" id="calle" class="form-control" placeholder="Calle" value="{{$item->Calle}}" />
+                <label class="form-label">Numero</label>
+                <input type="text" id="numero" class="form-control" placeholder="Numero" value="{{$item->Numero}}" />
+                <label class="form-label">Ciudad</label>
+                <input type="text" id="ciudad" class="form-control" placeholder="Ciudad" value="{{$item->Ciudad}}" />
+                <label class="form-label">Estado</label>
+                <input type="text" id="estado" class="form-control" placeholder="Estado" value="{{$item->Estado}}" />
+                <label class="form-label">Pais</label>
+                <input type="text" id="pais" class="form-control" placeholder="Pais" value="{{$item->Pais}}" />
+                <label class="form-label">Codigo postal</label>
+                <input type="text" id="codigo_postal" class="form-control" placeholder="Codigo Postal" value="{{$item->Codigo_postal}}" />
+                <br>
+
                 <button type="submit" class="btn btn-primary">Modificar el usuarios</button>
                 @endforeach
             </form>
@@ -123,4 +153,11 @@
 
         </div>
     </div>
+
+    @else
+    <script>
+        window.location = "{{ route('home') }}";
+        alert('no has iniciado session');
+    </script>
+    @endif
 </body>

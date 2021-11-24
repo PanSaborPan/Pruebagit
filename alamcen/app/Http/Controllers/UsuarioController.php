@@ -54,6 +54,7 @@ class UsuarioController extends Controller
             'Nombre' => $usuarios->Nombre, 'Area' => $usuarios->Area, 'Usuario' => $usuarios->Usuario,
             'Contraseña' => $usuarios->Contraseña
         );
+
         Usuario::updateData($usuarios->Id_usuario, $data);
     }
 

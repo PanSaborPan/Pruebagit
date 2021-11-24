@@ -45,7 +45,7 @@
     <script>
         function volver() {
 
-            $("#div").load("{{ url('/Usuarios') }}");
+            $("#div").load("{{ url('/Ventas') }}");
 
         }
     </script>
@@ -57,16 +57,16 @@
         $('#from1').on('submit', function(e) {
             e.preventDefault();
 
-            let Nombre = $('#nombre').val();
-            let Area = $('#area').val();
-            let Usuario = $('#usuario').val();
-            let Contraseña = $('#password').val();
-            let Id_usuario = $('#id').val();
+            let Id = $('#id').val();
 
-            console.log(Id_usuario.value);
+            let Cliente = $('#cliente').val();
+            let Producto = $('#producto').val();
+            let Descripcion = $('#descripcion').val();
+            let Cantidad = $('#cantidad').val();
+            let Precio_Unitario = $('#precio_unitario').val();
 
-            var url = '{{ route("users.update", ":id") }}';
-            url = url.replace(':id', Id_usuario.value);
+            var url = '{{ route("ventas.update", ":id") }}';
+            url = url.replace(':id', id.value);
 
 
             $.ajax({
@@ -74,16 +74,22 @@
                 type: "PUT",
                 data: {
                     "_token": "{{ csrf_token() }}",
-                    Nombre: Nombre,
-                    Area: Area,
-                    Usuario: Usuario,
-                    Contraseña: Contraseña,
-                    Id_usuario: Id_usuario,
+                    
+                    Cliente: Cliente,
+                    Producto: Producto,
+                    Descripcion: Descripcion,
+                    Cantidad: Cantidad,
+                    Precio_Unitario: Precio_Unitario,
+                    Iva: "14.6",
+                    Sub_Total: "1000",
+                    Total: "1200",
+                    Folio: Id,
+
                 },
                 success: function(response) {
                     console.log(response);
-                    alert('Usuario se modifico correctamente');
-                    $("#div").load("{{ url('/Usuarios') }}");
+                    alert('La venta se modifico correctamente');
+                    $("#div").load("{{ url('/Ventas') }}");
                 },
                 error: function(response) {
 
@@ -100,27 +106,34 @@
 <body>
     <div id="div">
         <div class="mb-3">
-            <h1>Captura de usuarios</h1>
+            <h1>Captura de ventas</h1>
 
             <form data-parsley-validate="true" id="from1">
 
 
-                @foreach($Usuarios as $item)
-                <input type="hidden" value="{{$item->Id_usuario}}" id="id" />
-                <label class="form-label">Nombre</label>
-                <input class="form-control" id="nombre" type="text" placeholder="Nombre" value="{{$item->Nombre}}" />
-                <label class="form-label">Area</label>
-                <input class="form-control" id="area" type="text" placeholder="Area" value="{{$item->Area}}" />
-                <label class="form-label">Usuario</label>
-                <input type="text" id="usuario" class="form-control mb-5px" placeholder="Usuario" value="{{$item->Usuario}}" />
-                <label class="form-label">Contraseña</label>
-                <input type="password" id="password" class="form-control" placeholder="Contraseña" value="{{$item->Contraseña}}" />
+                @foreach($Ventas as $item)
+
+                <input type="hidden" value="{{$item->Folio}}" id="id" />
+
+                <label class="form-label">Cliente</label>
+                <input class="form-control" id="cliente" value="{{$item->Cliente}}" type="text" placeholder="Cliente" />
+                <label class="form-label">Producto</label>
+                <input class="form-control" id="producto" value="{{$item->Producto}}" type="text" placeholder="Producto" />
+                <label class="form-label">Descripcion</label>
+                <input type="text" id="descripcion" value="{{$item->Descripcion}}" class="form-control mb-5px" placeholder="Descripcion" />
+                <label class="form-label">Cantidad</label>
+                <input type="number" id="cantidad" value="{{$item->Cantidad}}" class="form-control" placeholder="Cantidad" />
+                <label class="form-label">Precio por unidad</label>
+                <input type="number" class="form-control" step="0.01" id="precio_unitario" value="{{$item->Precio_Unitario}}" placeholder="Precio_Unitario" />
+
                 <br>
-                <button type="submit" class="btn btn-primary">Modificar el usuarios</button>
+                <button type="submit" class="btn btn-primary">Modificar la venta</button>
                 @endforeach
             </form>
+
             <button onclick="volver()" id="volver" class="btn btn-danger">volver</button>
 
         </div>
     </div>
+
 </body>
