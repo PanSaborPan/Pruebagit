@@ -65,7 +65,8 @@
                 <div class="login-header">
                     <div class="brand">
                         <div class="d-flex align-items-center">
-                            <h1>Voblakye</h1>
+                            <img src="{{ asset('img/login-bg/medical_blanco.png') }}" width="150" height="100">
+                            <h1>Medical Services Pack</h1>
                         </div>
 
                     </div>
@@ -89,18 +90,18 @@
                             {!! $errors->first('Contraseña','<span class="helpblock">:message</span>' ) !!}
                             <label for="emailAddress" class="d-flex align-items-center text-gray-600 fs-13px">Password</label>
                         </div>
-                        <div class="form-check mb-20px">
+                        <!-- <div class="form-check mb-20px">
                             <input class="form-check-input border-0" type="checkbox" value="1" id="rememberMe">
                             <label class="form-check-label fs-13px text-gray-500" for="rememberMe">
                                 Remember Me
                             </label>
-                        </div>
+                        </div>-->
                         <div class="mb-20px">
                             <button type="submit" class="btn btn-success d-block w-100 h-45px btn-lg">Sign me in</button>
                         </div>
-                        <div class="text-gray-500">
+                        <!--<div class="text-gray-500">
                             Not a member yet? Click <a href="javascript:;" class="text-white">here</a> to register.
-                        </div>
+                        </div>-->
                     </form>
                 </div>
                 <!-- END login-content -->

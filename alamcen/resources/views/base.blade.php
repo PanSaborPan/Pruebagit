@@ -68,7 +68,7 @@
         <div id="header" class="app-header">
             <!-- BEGIN navbar-header -->
             <div class="navbar-header">
-                <a href="{{ url('/') }}" class="navbar-brand"><span class="navbar-logo"></span> Voblakye</a>
+                <a href="{{ url('/') }}" class="navbar-brand"><span class="navbar-logo"></span>Medical Serivices Pack</a>
 
                 <button type="button" class="navbar-mobile-toggler" data-bs-toggle="collapse" data-bs-target="#top-navbar">
                     <span class="fa-stack fa-lg">
