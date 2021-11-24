@@ -129,29 +129,29 @@
             @csrf
 
             <label class="form-label">Nombre de contacto</label>
-            <input class="form-control" id="Nombre_de_contacto" type="text" placeholder="Nombre" />
+            <input class="form-control" id="Nombre_de_contacto" type="text" placeholder="Nombre de contacto" />
             <label class="form-label">Nombre de empresa</label>
-            <input class="form-control" id="Nombre_de_empresa" type="text" placeholder="Compañia" />
+            <input class="form-control" id="Nombre_de_empresa" type="text" placeholder="Nombre de empreza" />
             <label class="form-label">Razon social</label>
-            <input type="text" id="Razonsocial" class="form-control mb-5px" placeholder="Correo" />
+            <input type="text" id="Razonsocial" class="form-control mb-5px" placeholder="Razon social" />
             <label class="form-label">RFC</label>
-            <input type="text" id="Rfc" class="form-control" placeholder="Telefono" />
+            <input type="text" id="Rfc" class="form-control" placeholder="RFC" />
             <label class="form-label">Telefono</label>
             <input type="text" id="Telefono" class="form-control" placeholder="Telefono" />
             <label class="form-label">Movil</label>
             <input type="text" id="Movil" class="form-control" placeholder="Telefono" />
             <label class="form-label">Correo electronico 1</label>
-            <input type="text" id="Correo_electronico_1" class="form-control" placeholder="Telefono" />
+            <input type="email" id="Correo_electronico_1" class="form-control" placeholder="Correo1@hotmail.com" />
             <label class="form-label">Correo electronico 2</label>
-            <input type="text" id="Correo_electronico_2" class="form-control" placeholder="Telefono" />
+            <input type="email" id="Correo_electronico_2" class="form-control" placeholder="Correo2@hotmail.com" />
             <br>
             <label aling="center" class="form-label">DIRECCION:</label><br>
             <label class="form-label">Calle</label>
-            <input type="text" id="Calle" class="form-control" placeholder="Celular" />
+            <input type="text" id="Calle" class="form-control" placeholder="Calle" />
             <label class="form-label">Numero</label>
-            <input type="text" id="Numero" class="form-control" placeholder="Calle" />
+            <input type="text" id="Numero" class="form-control" placeholder="Numero" />
             <label class="form-label">Codigo postal</label>
-            <input type="text" id="Codigo_Postal" class="form-control" placeholder="Numero" />
+            <input type="text" id="Codigo_Postal" class="form-control" placeholder="CP" />
             <label class="form-label">Ciudad</label>
             <input type="text" id="Ciudad" class="form-control" placeholder="Ciudad" />
             <label class="form-label">Estado</label>

@@ -119,7 +119,7 @@
                 <label class="form-label">Nombre del producto</label>
                 <input class="form-control" id="Nombre_del_producto" type="text" placeholder="Nombre" value="{{$item->Nombre_del_producto}}" />
                 <label class="form-label">Descriptcion del producto</label>
-                <input class="form-control" id="Descripcion_del_producto" type="text" placeholder="Compañia" value="{{$item->Descripcion_del_producto}}" />
+                <textarea class="form-control" id="Descripcion_del_producto" placeholder="Descrpcion del producto">{{$item->Descripcion_del_producto}}</textarea>
                 <label class="form-label">Clave del sat</label>
                 <input type="text" id="Clave_del_sat" class="form-control mb-5px" placeholder="Correo" value="{{$item->Clave_del_sat}}" />
                 <label class="form-label">Clave de unidad</label>

@@ -117,7 +117,7 @@
             <label class="form-label">Producto</label>
             <input class="form-control" id="producto" type="text" placeholder="Producto" />
             <label class="form-label">Descripcion</label>
-            <input type="text" id="descripcion" class="form-control mb-5px" placeholder="Descripcion" />
+            <textarea id="descripcion" class="form-control mb-5px" placeholder="Descripcion"></textarea>
             <label class="form-label">Cantidad</label>
             <input type="number" id="cantidad" class="form-control" placeholder="Cantidad" />
             <label class="form-label">Precio por unidad</label>

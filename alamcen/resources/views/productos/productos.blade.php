@@ -144,23 +144,23 @@
             @csrf
 
             <label class="form-label">Nombre del producto</label>
-            <input class="form-control" id="Nombre_del_producto" type="text" placeholder="Nombre" />
+            <input class="form-control" id="Nombre_del_producto" type="text" placeholder="Nombre del producto" />
             <label class="form-label">Descriptcion del producto</label>
-            <input class="form-control" id="Descripcion_del_producto" type="text" placeholder="Compañia" />
+            <textarea class="form-control" id="Descripcion_del_producto" placeholder="Descrpcion del producto"></textarea>
             <label class="form-label">Clave del sat</label>
-            <input type="text" id="Clave_del_sat" class="form-control mb-5px" placeholder="Correo" />
+            <input type="text" id="Clave_del_sat" class="form-control mb-5px" placeholder="Clave SAT" />
             <label class="form-label">Clave de unidad</label>
-            <input type="text" id="Clave_de_unidad" class="form-control" placeholder="Telefono" />
+            <input type="text" id="Clave_de_unidad" class="form-control" placeholder="Clave de unidad" />
             <label class="form-label">Tipo</label>
-            <input type="text" id="Tipo" class="form-control" placeholder="Telefono" />
+            <input type="text" id="Tipo" class="form-control" placeholder="Tipo" />
             <label class="form-label">Precio unitario</label>
-            <input type="text" id="Precio_unitario" class="form-control" placeholder="Telefono" />
+            <input type="text" id="Precio_unitario" class="form-control" placeholder="Precio por unidad" />
             <label class="form-label">Existencias actuales</label>
-            <input type="text" id="Existencias_actuales" class="form-control" placeholder="Telefono" />
+            <input type="text" id="Existencias_actuales" class="form-control" placeholder="Existencias" />
             <label class="form-label">Puntos de reabastecimiento</label>
-            <input type="text" id="Punto_de_reabastecimiento" class="form-control" placeholder="Telefono" />
+            <input type="text" id="Punto_de_reabastecimiento" class="form-control" placeholder="Puntos de reabastecimiento" />
             <label class="form-label">Cuenta de activo de inventario</label>
-            <input type="text" id="Cuenta_de_activo_de_inventario" class="form-control" placeholder="Telefono" />
+            <input type="text" id="Cuenta_de_activo_de_inventario" class="form-control" placeholder="Cuenta de activo de inventario" />
             <br>
             <br>
             <button id="subir" type="submit" class="btn btn-primary">Crear nuevo usuario</button>
@@ -188,7 +188,7 @@
                     <th width="1%">Precio unitario</th>
                     <th width="1%">Existencias actuales</th>
                     <th width="1%">Punto de reabastecimiento</th>
-                    <th width="1%">Punto de reabastecimiento</th>
+                    <th width="1%">Cuenta de activo de inventario</th>
                     <th width="1%">Acciones</th>
                 </tr>
             </thead>
