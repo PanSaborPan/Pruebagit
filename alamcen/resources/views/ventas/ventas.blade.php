@@ -170,8 +170,8 @@
 
 
 
-                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Folio}}">edit</button>
-                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Folio}}">delete</button>
+                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Folio}}">Modificar</button>
+                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Folio}}">Borrar</button>
 
                     </td>
 

@@ -103,7 +103,7 @@
             },
             success: function(response) {
                 console.log(response);
-                alert('Proveedor se inserto correctamente');
+                alert('Cliente se inserto correctamente');
                 $("#div").load("{{ url('/Clientes') }}");
             },
             error: function(response) {
@@ -160,7 +160,7 @@
             <input type="text" id="Pais" class="form-control" placeholder="Pais" />
 
             <br>
-            <button id="subir" type="submit" class="btn btn-primary">Crear nuevo usuario</button>
+            <button id="subir" type="submit" class="btn btn-primary">Crear nuevo cliente</button>
         </form>
 
 
@@ -219,8 +219,8 @@
 
 
 
-                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}">edit</button>
-                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}">delete</button>
+                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}">Modificar</button>
+                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}">Borrar</button>
 
                     </td>
 

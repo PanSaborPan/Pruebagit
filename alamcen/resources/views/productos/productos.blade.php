@@ -163,7 +163,7 @@
             <input type="text" id="Cuenta_de_activo_de_inventario" class="form-control" placeholder="Cuenta de activo de inventario" />
             <br>
             <br>
-            <button id="subir" type="submit" class="btn btn-primary">Crear nuevo usuario</button>
+            <button id="subir" type="submit" class="btn btn-primary">Crear nuevo producto</button>
         </form>
 
 
@@ -212,8 +212,8 @@
 
 
 
-                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->SKU}}">edit</button>
-                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->SKU}}">delete</button>
+                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->SKU}}">Modificar</button>
+                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->SKU}}">Borrar</button>
 
                     </td>
 

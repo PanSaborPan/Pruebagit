@@ -100,7 +100,7 @@
                 },
                 success: function(response) {
                     console.log(response);
-                    alert('Usuario se modifico correctamente');
+                    alert('Cliente se modifico correctamente');
                     $("#div").load("{{ url('/Clientes') }}");
                 },
                 error: function(response) {
@@ -158,7 +158,7 @@
                 <input type="text" id="Pais" class="form-control" placeholder="Pais" value="{{$item->Pais}}" />
                 <br>
 
-                <button type="submit" class="btn btn-primary">Modificar el usuarios</button>
+                <button type="submit" class="btn btn-primary">Modificar el cliente</button>
                 @endforeach
             </form>
             <button onclick="volver()" id="volver" class="btn btn-danger">volver</button>

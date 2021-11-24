@@ -156,8 +156,8 @@
 
 
 
-                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_usuario}}">edit</button>
-                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_usuario}}">delete</button>
+                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_usuario}}">Modificar</button>
+                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_usuario}}">Borrar</button>
 
                     </td>
 

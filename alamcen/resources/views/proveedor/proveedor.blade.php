@@ -149,7 +149,7 @@
             <input type="text" id="codigo_postal" class="form-control" placeholder="Codigo Postal" />
 
             <br>
-            <button id="subir" type="submit" class="btn btn-primary">Crear nuevo usuario</button>
+            <button id="subir" type="submit" class="btn btn-primary">Crear nuevo proveedor</button>
         </form>
 
 
@@ -202,8 +202,8 @@
 
 
 
-                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_proveedor}}">edit</button>
-                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_proveedor}}">delete</button>
+                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_proveedor}}">Modificar</button>
+                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_proveedor}}">Borrar</button>
 
                     </td>
 

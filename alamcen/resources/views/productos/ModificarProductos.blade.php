@@ -90,7 +90,7 @@
                 },
                 success: function(response) {
                     console.log(response);
-                    alert('Usuario se modifico correctamente');
+                    alert('Producto se modifico correctamente');
                     $("#div").load("{{ url('/Productos') }}");
                 },
                 error: function(response) {
@@ -136,7 +136,7 @@
                 <input type="text" id="Cuenta_de_activo_de_inventario" class="form-control" placeholder="Telefono" value="{{$item->Cuenta_de_activo_de_inventario}}" />
                 <br>
 
-                <button type="submit" class="btn btn-primary">Modificar el usuarios</button>
+                <button type="submit" class="btn btn-primary">Modificar el producto</button>
                 @endforeach
             </form>
             <button onclick="volver()" id="volver" class="btn btn-danger">volver</button>

@@ -94,7 +94,7 @@
                 },
                 success: function(response) {
                     console.log(response);
-                    alert('Usuario se modifico correctamente');
+                    alert('Proovedor se modifico correctamente');
                     $("#div").load("{{ url('/Proveedor') }}");
                 },
                 error: function(response) {
@@ -146,7 +146,7 @@
                 <input type="text" id="codigo_postal" class="form-control" placeholder="Codigo Postal" value="{{$item->Codigo_postal}}" />
                 <br>
 
-                <button type="submit" class="btn btn-primary">Modificar el usuarios</button>
+                <button type="submit" class="btn btn-primary">Modificar el proveedor</button>
                 @endforeach
             </form>
             <button onclick="volver()" id="volver" class="btn btn-danger">volver</button>
