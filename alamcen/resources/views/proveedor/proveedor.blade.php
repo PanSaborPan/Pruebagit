@@ -130,10 +130,11 @@
             <input type="text" id="correo" class="form-control mb-5px" placeholder="Correo" />
             <label class="form-label">Telefono</label>
             <input type="text" id="telefono" class="form-control" placeholder="Telefono" />
-            <br>
-            <label aling="center" class="form-label">DIRECCION:</label><br>
             <label class="form-label">Celular</label>
             <input type="text" id="celular" class="form-control" placeholder="Celular" />
+            <br>
+            <label aling="center" class="form-label">DIRECCION:</label><br>
+
             <label class="form-label">Calle</label>
             <input type="text" id="calle" class="form-control" placeholder="Calle" />
             <label class="form-label">Numero</label>

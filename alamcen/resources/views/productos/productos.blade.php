@@ -57,7 +57,7 @@
             exportOptions: {
                 columns: [0, 1, 2, 5, 6, 7, 8, 9],
                 rows: function(idx, data, node) {
-                    if (data[7] < 200) {
+                    if (data[7] <= 100) {
                         return data;
                     }
                 }
