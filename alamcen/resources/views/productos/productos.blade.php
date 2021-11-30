@@ -148,19 +148,19 @@
             <label class="form-label">Descriptcion del producto</label>
             <textarea class="form-control" id="Descripcion_del_producto" placeholder="Descrpcion del producto"></textarea>
             <label class="form-label">Clave del sat</label>
-            <input type="text" id="Clave_del_sat" class="form-control mb-5px" placeholder="Clave SAT" />
+            <input type="number" id="Clave_del_sat" class="form-control mb-5px" placeholder="Clave SAT" />
             <label class="form-label">Clave de unidad</label>
             <input type="text" id="Clave_de_unidad" class="form-control" placeholder="Clave de unidad" />
             <label class="form-label">Tipo</label>
             <input type="text" id="Tipo" class="form-control" placeholder="Tipo" />
             <label class="form-label">Precio unitario</label>
-            <input type="text" id="Precio_unitario" class="form-control" placeholder="Precio por unidad" />
+            <input type="number" id="Precio_unitario" class="form-control" placeholder="Precio por unidad" />
             <label class="form-label">Existencias actuales</label>
-            <input type="text" id="Existencias_actuales" class="form-control" placeholder="Existencias" />
+            <input type="number" id="Existencias_actuales" class="form-control" placeholder="Existencias" />
             <label class="form-label">Puntos de reabastecimiento</label>
-            <input type="text" id="Punto_de_reabastecimiento" class="form-control" placeholder="Puntos de reabastecimiento" />
+            <input type="number" id="Punto_de_reabastecimiento" class="form-control" placeholder="Puntos de reabastecimiento" />
             <label class="form-label">Cuenta de activo de inventario</label>
-            <input type="text" id="Cuenta_de_activo_de_inventario" class="form-control" placeholder="Cuenta de activo de inventario" />
+            <input type="number" id="Cuenta_de_activo_de_inventario" class="form-control" placeholder="Cuenta de activo de inventario" />
             <br>
             <br>
             <button id="subir" type="submit" class="btn btn-primary">Crear nuevo producto</button>
@@ -176,7 +176,7 @@
         <h1>Tabla de productos actuales</h1>
 
 
-        <table id="data-table-default" class="table  table-bordered align-middle">
+        <table id="data-table-default" class="table table-bordered align-middle">
             <thead>
                 <tr>
                     <th width="1%">id</th>
@@ -234,8 +234,8 @@
 
 
 
-                            <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->SKU}}">edit</button>
-                            <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->SKU}}">delete</button>
+                            <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->SKU}}">Modificar</button>
+                            <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->SKU}}">Borrar</button>
 
                         </td>
 

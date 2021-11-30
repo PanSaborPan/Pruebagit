@@ -121,19 +121,19 @@
                 <label class="form-label">Descriptcion del producto</label>
                 <textarea class="form-control" id="Descripcion_del_producto" placeholder="Descrpcion del producto">{{$item->Descripcion_del_producto}}</textarea>
                 <label class="form-label">Clave del sat</label>
-                <input type="text" id="Clave_del_sat" class="form-control mb-5px" placeholder="Correo" value="{{$item->Clave_del_sat}}" />
+                <input type="number" id="Clave_del_sat" class="form-control mb-5px" placeholder="Correo" value="{{$item->Clave_del_sat}}" />
                 <label class="form-label">Clave de unidad</label>
                 <input type="text" id="Clave_de_unidad" class="form-control" placeholder="Telefono" value="{{$item->Clave_de_unidad}}" />
                 <label class="form-label">Tipo</label>
                 <input type="text" id="Tipo" class="form-control" placeholder="Telefono" value="{{$item->Tipo}}" />
                 <label class="form-label">Precio unitario</label>
-                <input type="text" id="Precio_unitario" class="form-control" placeholder="Telefono" value="{{$item->Precio_unitario}}" />
+                <input type="number" id="Precio_unitario" class="form-control" placeholder="Telefono" value="{{$item->Precio_unitario}}" />
                 <label class="form-label">Existencias actuales</label>
-                <input type="text" id="Existencias_actuales" class="form-control" placeholder="Telefono" value="{{$item->Existencias_actuales}}" />
+                <input type="number" id="Existencias_actuales" class="form-control" placeholder="Telefono" value="{{$item->Existencias_actuales}}" />
                 <label class="form-label">Puntos de reabastecimiento</label>
-                <input type="text" id="Punto_de_reabastecimiento" class="form-control" placeholder="Telefono" value="{{$item->	Punto_de_reabastecimiento}}" />
+                <input type="number" id="Punto_de_reabastecimiento" class="form-control" placeholder="Telefono" value="{{$item->	Punto_de_reabastecimiento}}" />
                 <label class="form-label">Cuenta de activo de inventario</label>
-                <input type="text" id="Cuenta_de_activo_de_inventario" class="form-control" placeholder="Telefono" value="{{$item->Cuenta_de_activo_de_inventario}}" />
+                <input type="number" id="Cuenta_de_activo_de_inventario" class="form-control" placeholder="Telefono" value="{{$item->Cuenta_de_activo_de_inventario}}" />
                 <br>
 
                 <button type="submit" class="btn btn-primary">Modificar el producto</button>

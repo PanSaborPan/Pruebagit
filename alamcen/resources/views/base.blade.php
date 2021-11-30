@@ -68,7 +68,7 @@
         <div id="header" class="app-header">
             <!-- BEGIN navbar-header -->
             <div class="navbar-header">
-                <a href="{{ url('/') }}" class="navbar-brand"><span class="navbar-logo"></span>Medical Serivices Pack</a>
+                <a href="{{ url('/welcome') }}" class="navbar-brand"><span class="navbar-logo"></span>Medical Serivices Pack</a>
 
                 <button type="button" class="navbar-mobile-toggler" data-bs-toggle="collapse" data-bs-target="#top-navbar">
                     <span class="fa-stack fa-lg">
@@ -143,7 +143,7 @@
 
                 <div class="navbar-item navbar-user dropdown">
                     <a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
-                        <img src="" alt="" />
+                        <img src="{{ asset('img/login-bg/teri.jpg') }}" alt="" />
                         <span>
                             <span class="d-none d-md-inline">{{Session::get('users.Usuario')}}</span>
                             <b class="caret"></b>
