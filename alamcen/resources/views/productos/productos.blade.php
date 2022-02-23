@@ -51,7 +51,7 @@
         responsive: true,
         dom: '<"row"<"col-sm-5"B><"col-sm-7"fr>>t<"row"<"col-sm-5"i><"col-sm-7"p>>',
         buttons: [{
-            extend: 'pdf',
+            extend: 'excel',
             title: 'productos escasos',
             className: 'btn-sm',
             exportOptions: {
@@ -76,12 +76,18 @@
     };
 </script>
 
-<script>
-    function clickdelete(b) {
 
-        var url = '{{ route("producto.delete", ":id") }}';
-        url = url.replace(':id', b.value);
-        $("#div").load(url);
+<script>
+    function clickdelete(b, a) {
+        if (a <= 0) {
+            var url = '{{ route("producto.delete", ":id") }}';
+            url = url.replace(':id', b.value);
+            alert('producto eliminado correctamente');
+            $("#div").load(url);
+        } else {
+            alert('no se puede eliminar si aun hay existencias del producto');
+        }
+
     };
 </script>
 
@@ -142,7 +148,7 @@
         <form id="from1">
 
             @csrf
-
+            <span class="badge bg-danger rounded-pill">Rojo:para poder borrar o bajos de stock</span>
             <label class="form-label">Nombre del producto</label>
             <input class="form-control" id="Nombre_del_producto" type="text" placeholder="Nombre del producto" />
             <label class="form-label">Descriptcion del producto</label>
@@ -205,15 +211,13 @@
                     <td style="display: none; background-color:yellow">{{$item->Clave_de_unidad}}</td>
                     <td style="display: none; background-color:yellow">{{$item->Tipo}}</td>
                     <td style="display: none; background-color:yellow">{{$item->Precio_unitario}}</td>
-                    <td style="display: none; background-color:yellow">{{$item->Existencias_actuales}}</td>
+                    <td id='cantidad' style="display: none; background-color:yellow">{{$item->Existencias_actuales}}</td>
                     <td style="display: none; background-color:yellow">{{$item->Punto_de_reabastecimiento}}</td>
                     <td style="display: none; background-color:yellow">{{$item->Cuenta_de_activo_de_inventario}}</td>
                     <td style="display: none; background-color:yellow">
 
-
-
                         <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->SKU}}">Modificar</button>
-                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->SKU}}">Borrar</button>
+                        <button class="id" id='Eliminar' onclick="clickdelete(this,'{{$item->Existencias_actuales}}')" value="{{$item->SKU}}">Borrar</button>
 
                     </td>
 
@@ -227,7 +231,7 @@
                         <td style="display: none;">{{$item->Clave_de_unidad}}</td>
                         <td style="display: none;">{{$item->Tipo}}</td>
                         <td style="display: none;">{{$item->Precio_unitario}}</td>
-                        <td style="display: none;">{{$item->Existencias_actuales}}</td>
+                        <td id='cantidad' style="display: none;">{{$item->Existencias_actuales}}</td>
                         <td style="display: none;">{{$item->Punto_de_reabastecimiento}}</td>
                         <td style="display: none;">{{$item->Cuenta_de_activo_de_inventario}}</td>
                         <td style="display: none;">
@@ -235,7 +239,7 @@
 
 
                             <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->SKU}}">Modificar</button>
-                            <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->SKU}}">Borrar</button>
+                            <button class="id" id='Eliminar' onclick='clickdelete(this,"{{$item->Existencias_actuales}}")' value="{{$item->SKU}}">Borrar</button>
 
                         </td>
 
